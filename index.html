@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>TOCS-APA | Mission Control Center</title>
+    <style>
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; text-align: center; overflow-x: hidden; }
+        .scanner { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: #0f0; box-shadow: 0 0 15px #0f0; animation: scan 3s linear infinite; }
+        @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
+        .box { border: 2px solid #0f0; padding: 20px; margin: 20px auto; max-width: 600px; border-radius: 10px; background: rgba(0, 20, 0, 0.8); }
+        .data-bar { height: 20px; background: #222; margin: 10px 0; border-radius: 5px; }
+        .fill { height: 100%; background: #0f0; width: 0%; transition: width 1s; }
+        h1 { text-transform: uppercase; letter-spacing: 3px; }
+    </style>
+</head>
+<body>
+    <div class="scanner"></div>
+    <h1>TOCS-APA | Mission Control</h1>
+    <div class="box">
+        <h3>نظام الرقابة الحيوية (Sector 9D)</h3>
+        <p>نبض القلب (HR):</p>
+        <div class="data-bar"><div id="hr" class="fill" style="width: 75%;"></div></div>
+        <p>مستوى المخاطر (Risk Index):</p>
+        <div class="data-bar"><div id="risk" class="fill" style="width: 20%; background: #f00;"></div></div>
+        <button onclick="updateData()" style="padding: 10px 20px; margin-top: 20px; cursor: pointer;">تحديث المسح (Sync)</button>
+    </div>
+    <script>
+        function updateData() {
+            document.getElementById('hr').style.width = Math.floor(Math.random() * 40 + 60) + '%';
+            document.getElementById('risk').style.width = Math.floor(Math.random() * 10 + 10) + '%';
+        }
+    </script>
+</body>
+</html>
