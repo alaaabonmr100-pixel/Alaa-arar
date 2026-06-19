@@ -1,1 +1,2 @@
 npm create tauri-app@latest tocs-apa-2026 -- --template react-ts
+npm create tauri-app@latest
