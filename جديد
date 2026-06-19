@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة الأندية الرياضية</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .sidebar { background: #2c3e50; color: white; padding: 20px; border-radius: 10px; }
+        h1 { color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>لوحة تحكم النادي</h2>
+    </div>
+    <h1>أهلاً بك في نظام الإدارة</h1>
+</body>
+</html>
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>لوحة التحكم</h2>
+    <a href="#" class="nav-item">🏠 الرئيسية</a>
+    <a href="#" class="nav-item">👤 اللاعبين</a>
+    <a href="#" class="nav-item">⚙️ الإعدادات</a>
+  </div>
+
+  <main class="main-content">
+    <h1>منظومة التشريح التفاعلية</h1>
+    <br>
+    <button class="btn-action" onclick="showAnatomy()">عرض الهيكل التشريحي</button>
+    
+    <div id="display-area">
+      <p>اضغط على الزر لعرض المحتوى.</p>
+    </div>
+  </main>
+
+  <script>
+    function showAnatomy() 
+      const area = document.getElementById('display-area');
+      
+      // ملاحظة: قم بتغيير الاسم هنا ليتطابق مع اسم الملف الفعلي في مجلد مشروعك
+      const imagePath = "anatomy.jpg"; 
+      
+      area.innerHTML = `
+        <h3>الهيكل العظمي البشري</h3>
+        <img src="${imagePath}" alt="صورة تشريحية" onerror="this.src='placeholder.jpg'; this.style.display='none'; alert('لم يتم العثور على ملف الصورة!');">
+      `;
+    }
+  </script>
+</body>
+</html>
+قمت بإعادة انشاء صفة جديد بهذا الكود
