@@ -1,54 +1,21 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>TOCS-APA | Mission Control Center</title>
-    <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; text-align: center; overflow-x: hidden; }
-        .scanner { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: #0f0; box-shadow: 0 0 15px #0f0; animation: scan 3s linear infinite; }
-        @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
-        .box { border: 2px solid #0f0; padding: 20px; margin: 20px auto; max-width: 600px; border-radius: 10px; background: rgba(0, 20, 0, 0.8); }
-        .data-bar { height: 20px; background: #222; margin: 10px 0; border-radius: 5px; }
-        .fill { height: 100%; background: #0f0; width: 0%; transition: width 1s; }
-        h1 { text-transform: uppercase; letter-spacing: 3px; }
-    </style>
-</head>
-<body>
-    <div class="scanner"></div>
-    <h1>TOCS-APA | Mission Control</h1>
-    <div class="box">
-        <h3>نظام الرقابة الحيوية (Sector 9D)</h3>
-        <p>نبض القلب (HR):</p>
-        <div class="data-bar"><div id="hr" class="fill" style="width: 75%;"></div></div>
-        <p>مستوى المخاطر (Risk Index):</p>
-        <div class="data-bar"><div id="risk" class="fill" style="width: 20%; background: #f00;"></div></div>
-        <button onclick="updateData()" style="padding: 10px 20px; margin-top: 20px; cursor: pointer;">تحديث المسح (Sync)</button>
-    </div>
-    <script>
-        function updateData() {
-            document.getElementById('hr').style.width = Math.floor(Math.random() * 40 + 60) + '%';
-            document.getElementById('risk').style.width = Math.floor(Math.random() * 10 + 10) + '%';
-        }
-    </script>
-</body>
-</html>
 ```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منظومة البروتوكول التدريبي المتفاعلة</title>
+    <title>منظومة البروتوكول التدريبي المتكاملة</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; padding: 20px; background-color: #f0f2f5; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f9; color: #333; }
         .container { max-width: 900px; margin: auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; text-align: center; }
-        
-        .anatomy-section { margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px; }
-        .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
-        button { padding: 12px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        h1, h2 { color: #2c3e50; text-align: center; }
+        h1 { border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        .section { margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+        ul { list-style: none; padding: 0; }
+        li { background: #fff; margin: 10px 0; padding: 15px; border-right: 5px solid #3498db; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .btn-grid { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        button { padding: 12px 25px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
         button:hover { background: #2980b9; }
-        
         #display-area { text-align: center; margin-top: 20px; border: 2px dashed #ddd; padding: 20px; }
         #display-area img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 15px; }
     </style>
@@ -57,27 +24,39 @@
 
 <div class="container">
     <h1>بروتوكول العمل التدريبي (SOPs)</h1>
+    
+    <!-- قسم التعليمات -->
+    <div class="section">
+        <h2>قواعد السلوك والتعليمات العامة</h2>
+        <ul>
+            <li><strong>1. الاحترام المتبادل:</strong> يُمنع استخدام أي ألفاظ غير لائقة.</li>
+            <li><strong>2. السلامة أولاً:</strong> لا تستخدم المعدات دون إشراف المدرب.</li>
+            <li><strong>3. النظافة العامة:</strong> حافظ على نظافة المكان واستخدم المنشفة الشخصية.</li>
+            <li><strong>4. الخصوصية:</strong> يُمنع التصوير داخل المركز إلا بموافقة الإدارة.</li>
+        </ul>
+    </div>
 
-    <div class="anatomy-section">
-        <h3>منظومة التشريح التفاعلية</h3>
+    <!-- قسم التشريح التفاعلي -->
+    <div class="section">
+        <h2>منظومة التشريح التفاعلية</h2>
         <div class="btn-grid">
-            <button onclick="showAnatomy('الهيكل العظمي العام')">عرض الهيكل التشريحي</button>
+            <button onclick="showAnatomy()">عرض الهيكل التشريحي</button>
         </div>
         <div id="display-area">
-            <p>انقر على الزر أعلاه لعرض صورة التشريح المدمجة</p>
+            <p>انقر على الزر أعلاه لعرض صورة التشريح.</p>
         </div>
     </div>
 </div>
 
 <script>
-    function showAnatomy(part) {
+    function showAnatomy() {
         const area = document.getElementById('display-area');
-        // تأكد أن اسم الملف هنا يطابق اسم الصورة التي رفعتها على GitHub
+        // تأكد أن اسم الصورة يطابق اسم ملفك الذي رفعته في GitHub
         const imagePath = "Screenshot_٢٠٢٦-٠٦-١٧-٢٢-٢٩-٢٠-٦٩٧_com.canva.editor.jpg";
         
-        area.innerHTML = `<h3>عرض: ${part}</h3>
-                          <img src="${imagePath}" alt="صورة التشريح">
-                          <p>تم استدعاء صورة التشريح التفاعلية بنجاح.</p>`;
+        area.innerHTML = `<h3>عرض الهيكل العظمي</h3>
+                          <img src="${imagePath}" alt="صورة تشريحية">
+                          <p>تم استدعاء صورة التشريح بنجاح.</p>`;
     }
 </script>
 
@@ -85,4 +64,5 @@
 </html>
 
 ```
+
 
